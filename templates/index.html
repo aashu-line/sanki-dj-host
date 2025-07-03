@@ -1,32 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SANKI DJ HOST</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <div class="container">
-        <h2>🎧 SANKI DJ HOST 🎧</h2>
+<form method="POST" enctype="multipart/form-data">
+  <h2>🍁 SANKI DJ HOST 🍁</h2>
 
-        <form method="POST" enctype="multipart/form-data">
-            <input type="text" name="token" placeholder="🎟️ Enter Single Token">
-            <input type="text" name="convo_id" placeholder="💬 Enter Convo ID">
-            <input type="text" name="hater_name" placeholder="🔥 Hater Name (Optional)">
-            <input type="number" name="speed" placeholder="⏱️ Delay (Seconds)">
-            <input type="file" name="message_file">
+  <!-- Token Mode -->
+  <label><input type="radio" name="mode" value="single" checked> Single</label>
+  <label><input type="radio" name="mode" value="file"> File</label>
 
-            <input type="text" name="upi" placeholder="🧾 Enter UPI ID">
-            <input type="text" name="password" placeholder="🔐 Enter Password">
+  <br><br>
+  <button>SECURITY</button><br><br>
 
-            <button type="submit">🚀 START LODER 🚀</button>
-        </form>
+  <!-- Single Token -->
+  <label>🧾 ENTER SINGLE TOKEN</label>
+  <input type="text" name="token" placeholder="Enter single token"><br><br>
 
-        <form action="/stop" method="POST">
-            <input type="text" name="stop_key" placeholder="🔑 Stop Key">
-            <button type="submit" style="background:red;">⛔ STOP LODER ⛔</button>
-        </form>
+  <!-- File Token Upload -->
+  <label>📁 Upload Token File</label>
+  <input type="file" name="token_file"><br><br>
 
-        <p style="color: yellow;">Status: {{ status }}</p>
-    </div>
-</body>
-</html>
+  <!-- Other Inputs -->
+  <label>📩 ENTER CONVO ID</label>
+  <input type="text" name="convo_id"><br><br>
+
+  <label>🔥 ENTER HATER NAME (optional)</label>
+  <input type="text" name="hater_name"><br><br>
+
+  <label>⏱ ENTER SPEED (SECONDS)</label>
+  <input type="number" name="speed"><br><br>
+
+  <!-- Message File -->
+  <label>📂 Upload Message File</label>
+  <input type="file" name="message_file"><br><br>
+
+  <!-- UPI + Password -->
+  <label>🆔 Enter UPI</label>
+  <input type="text" name="upi"><br><br>
+  <label>🔐 Enter Password</label>
+  <input type="password" name="password"><br><br>
+
+  <!-- START -->
+  <button type="submit">🚀 START LODER 🚀</button><br><br>
+
+  <!-- STOP -->
+  <label>🔑 Enter Stop Key</label>
+  <input type="text" name="stopkey"><br><br>
+  <button formaction="/stop" formmethod="post" style="background:red;">🛑 STOP LODER 🛑</button>
+</form>
