@@ -1,0 +1,29 @@
+body {
+    background: url('/static/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    background: green;
+    color: white;
+    font-weight: bold;
+}
